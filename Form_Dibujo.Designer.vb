@@ -1,4 +1,4 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class Form_Dibujo
     Inherits System.Windows.Forms.Form
 
@@ -54,6 +54,9 @@ Partial Class Form_Dibujo
         Me.Button_MediaMobil = New System.Windows.Forms.Button()
         Me.Button_Blackman = New System.Windows.Forms.Button()
         Me.Button_Softmax = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button_MandelbrotSet = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -339,11 +342,41 @@ Partial Class Form_Dibujo
         Me.Button_Softmax.Text = "SoftMax"
         Me.Button_Softmax.UseVisualStyleBackColor = True
         '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(173, 653)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(75, 23)
+        Me.Button7.TabIndex = 32
+        Me.Button7.Text = "Mix"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(174, 112)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(75, 23)
+        Me.Button8.TabIndex = 33
+        Me.Button8.Text = "moovimiento"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button_MandelbrotSet
+        '
+        Me.Button_MandelbrotSet.Location = New System.Drawing.Point(202, 210)
+        Me.Button_MandelbrotSet.Name = "Button_MandelbrotSet"
+        Me.Button_MandelbrotSet.Size = New System.Drawing.Size(126, 23)
+        Me.Button_MandelbrotSet.TabIndex = 34
+        Me.Button_MandelbrotSet.Text = "MandelbrotSet"
+        Me.Button_MandelbrotSet.UseVisualStyleBackColor = True
+        '
         'Form_Dibujo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1144, 714)
+        Me.Controls.Add(Me.Button_MandelbrotSet)
+        Me.Controls.Add(Me.Button8)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button_Softmax)
         Me.Controls.Add(Me.Button_Blackman)
         Me.Controls.Add(Me.Button_MediaMobil)
@@ -416,4 +449,7 @@ Partial Class Form_Dibujo
     Friend WithEvents Button_MediaMobil As Button
     Friend WithEvents Button_Blackman As Button
     Friend WithEvents Button_Softmax As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents Button_MandelbrotSet As Button
 End Class
