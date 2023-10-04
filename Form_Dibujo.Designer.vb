@@ -57,6 +57,21 @@ Partial Class Form_Dibujo
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button_MandelbrotSet = New System.Windows.Forms.Button()
+        Me.Button_CirculoPuntos = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button_Mandalas = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button_SierpinskiTriangle = New System.Windows.Forms.Button()
+        Me.Button_Koch = New System.Windows.Forms.Button()
+        Me.Button_Barnsley = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button_Blackman2 = New System.Windows.Forms.Button()
+        Me.Button_Media = New System.Windows.Forms.Button()
+        Me.Button_MediaBlackman = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -71,6 +86,9 @@ Partial Class Form_Dibujo
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Location = New System.Drawing.Point(391, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(741, 690)
@@ -150,7 +168,7 @@ Partial Class Form_Dibujo
         '
         'Button_Circulo3Puntos
         '
-        Me.Button_Circulo3Puntos.Location = New System.Drawing.Point(12, 211)
+        Me.Button_Circulo3Puntos.Location = New System.Drawing.Point(12, 199)
         Me.Button_Circulo3Puntos.Name = "Button_Circulo3Puntos"
         Me.Button_Circulo3Puntos.Size = New System.Drawing.Size(109, 23)
         Me.Button_Circulo3Puntos.TabIndex = 10
@@ -159,7 +177,7 @@ Partial Class Form_Dibujo
         '
         'Button_fourier
         '
-        Me.Button_fourier.Location = New System.Drawing.Point(12, 269)
+        Me.Button_fourier.Location = New System.Drawing.Point(12, 257)
         Me.Button_fourier.Name = "Button_fourier"
         Me.Button_fourier.Size = New System.Drawing.Size(109, 23)
         Me.Button_fourier.TabIndex = 11
@@ -168,7 +186,7 @@ Partial Class Form_Dibujo
         '
         'Button_Circulo3PuntosOK
         '
-        Me.Button_Circulo3PuntosOK.Location = New System.Drawing.Point(12, 182)
+        Me.Button_Circulo3PuntosOK.Location = New System.Drawing.Point(12, 170)
         Me.Button_Circulo3PuntosOK.Name = "Button_Circulo3PuntosOK"
         Me.Button_Circulo3PuntosOK.Size = New System.Drawing.Size(109, 23)
         Me.Button_Circulo3PuntosOK.TabIndex = 12
@@ -177,7 +195,7 @@ Partial Class Form_Dibujo
         '
         'ButtonCirculo3Puntos_V2
         '
-        Me.ButtonCirculo3Puntos_V2.Location = New System.Drawing.Point(12, 240)
+        Me.ButtonCirculo3Puntos_V2.Location = New System.Drawing.Point(12, 228)
         Me.ButtonCirculo3Puntos_V2.Name = "ButtonCirculo3Puntos_V2"
         Me.ButtonCirculo3Puntos_V2.Size = New System.Drawing.Size(109, 23)
         Me.ButtonCirculo3Puntos_V2.TabIndex = 13
@@ -222,7 +240,7 @@ Partial Class Form_Dibujo
         '
         'Button_GenerarLiraAleatoria
         '
-        Me.Button_GenerarLiraAleatoria.Location = New System.Drawing.Point(12, 323)
+        Me.Button_GenerarLiraAleatoria.Location = New System.Drawing.Point(25, 389)
         Me.Button_GenerarLiraAleatoria.Name = "Button_GenerarLiraAleatoria"
         Me.Button_GenerarLiraAleatoria.Size = New System.Drawing.Size(131, 23)
         Me.Button_GenerarLiraAleatoria.TabIndex = 18
@@ -231,7 +249,7 @@ Partial Class Form_Dibujo
         '
         'TextBox_GenerarLiraAleatoria
         '
-        Me.TextBox_GenerarLiraAleatoria.Location = New System.Drawing.Point(149, 326)
+        Me.TextBox_GenerarLiraAleatoria.Location = New System.Drawing.Point(162, 392)
         Me.TextBox_GenerarLiraAleatoria.Name = "TextBox_GenerarLiraAleatoria"
         Me.TextBox_GenerarLiraAleatoria.Size = New System.Drawing.Size(100, 20)
         Me.TextBox_GenerarLiraAleatoria.TabIndex = 19
@@ -344,7 +362,7 @@ Partial Class Form_Dibujo
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(173, 653)
+        Me.Button7.Location = New System.Drawing.Point(253, 644)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(75, 23)
         Me.Button7.TabIndex = 32
@@ -369,11 +387,161 @@ Partial Class Form_Dibujo
         Me.Button_MandelbrotSet.Text = "MandelbrotSet"
         Me.Button_MandelbrotSet.UseVisualStyleBackColor = True
         '
+        'Button_CirculoPuntos
+        '
+        Me.Button_CirculoPuntos.Location = New System.Drawing.Point(12, 141)
+        Me.Button_CirculoPuntos.Name = "Button_CirculoPuntos"
+        Me.Button_CirculoPuntos.Size = New System.Drawing.Size(109, 23)
+        Me.Button_CirculoPuntos.TabIndex = 35
+        Me.Button_CirculoPuntos.Text = "Circulo 3 puntos ia"
+        Me.Button_CirculoPuntos.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(202, 240)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(126, 23)
+        Me.Button9.TabIndex = 36
+        Me.Button9.Text = "Conjunto de Julia"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button_Mandalas
+        '
+        Me.Button_Mandalas.Location = New System.Drawing.Point(202, 300)
+        Me.Button_Mandalas.Name = "Button_Mandalas"
+        Me.Button_Mandalas.Size = New System.Drawing.Size(126, 23)
+        Me.Button_Mandalas.TabIndex = 37
+        Me.Button_Mandalas.Text = "Mandalas"
+        Me.Button_Mandalas.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(202, 330)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(75, 23)
+        Me.Button10.TabIndex = 38
+        Me.Button10.Text = "Button10"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button_SierpinskiTriangle
+        '
+        Me.Button_SierpinskiTriangle.Location = New System.Drawing.Point(12, 290)
+        Me.Button_SierpinskiTriangle.Name = "Button_SierpinskiTriangle"
+        Me.Button_SierpinskiTriangle.Size = New System.Drawing.Size(75, 23)
+        Me.Button_SierpinskiTriangle.TabIndex = 39
+        Me.Button_SierpinskiTriangle.Text = "Sierpinski Triangle"
+        Me.Button_SierpinskiTriangle.UseVisualStyleBackColor = True
+        '
+        'Button_Koch
+        '
+        Me.Button_Koch.Location = New System.Drawing.Point(12, 319)
+        Me.Button_Koch.Name = "Button_Koch"
+        Me.Button_Koch.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Koch.TabIndex = 40
+        Me.Button_Koch.Text = "Koch"
+        Me.Button_Koch.UseVisualStyleBackColor = True
+        '
+        'Button_Barnsley
+        '
+        Me.Button_Barnsley.Location = New System.Drawing.Point(12, 348)
+        Me.Button_Barnsley.Name = "Button_Barnsley"
+        Me.Button_Barnsley.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Barnsley.TabIndex = 41
+        Me.Button_Barnsley.Text = "Barnsley"
+        Me.Button_Barnsley.UseVisualStyleBackColor = True
+        '
+        'Button14
+        '
+        Me.Button14.Location = New System.Drawing.Point(93, 348)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(75, 23)
+        Me.Button14.TabIndex = 44
+        Me.Button14.Text = "Button14"
+        Me.Button14.UseVisualStyleBackColor = True
+        '
+        'Button15
+        '
+        Me.Button15.Location = New System.Drawing.Point(93, 319)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(75, 23)
+        Me.Button15.TabIndex = 43
+        Me.Button15.Text = "Button15"
+        Me.Button15.UseVisualStyleBackColor = True
+        '
+        'Button16
+        '
+        Me.Button16.Location = New System.Drawing.Point(93, 290)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(75, 23)
+        Me.Button16.TabIndex = 42
+        Me.Button16.Text = "Button16"
+        Me.Button16.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(202, 269)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(126, 23)
+        Me.Button11.TabIndex = 45
+        Me.Button11.Text = "Conjunto de Julia"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(133, 653)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(102, 23)
+        Me.Button12.TabIndex = 46
+        Me.Button12.Text = "Media mobil"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'Button_Blackman2
+        '
+        Me.Button_Blackman2.Location = New System.Drawing.Point(133, 682)
+        Me.Button_Blackman2.Name = "Button_Blackman2"
+        Me.Button_Blackman2.Size = New System.Drawing.Size(102, 23)
+        Me.Button_Blackman2.TabIndex = 47
+        Me.Button_Blackman2.Text = "Blackman"
+        Me.Button_Blackman2.UseVisualStyleBackColor = True
+        '
+        'Button_Media
+        '
+        Me.Button_Media.Location = New System.Drawing.Point(253, 615)
+        Me.Button_Media.Name = "Button_Media"
+        Me.Button_Media.Size = New System.Drawing.Size(75, 23)
+        Me.Button_Media.TabIndex = 48
+        Me.Button_Media.Text = "Media"
+        Me.Button_Media.UseVisualStyleBackColor = True
+        '
+        'Button_MediaBlackman
+        '
+        Me.Button_MediaBlackman.Location = New System.Drawing.Point(253, 566)
+        Me.Button_MediaBlackman.Name = "Button_MediaBlackman"
+        Me.Button_MediaBlackman.Size = New System.Drawing.Size(109, 23)
+        Me.Button_MediaBlackman.TabIndex = 49
+        Me.Button_MediaBlackman.Text = "Media y Blackman"
+        Me.Button_MediaBlackman.UseVisualStyleBackColor = True
+        '
         'Form_Dibujo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1144, 714)
+        Me.Controls.Add(Me.Button_MediaBlackman)
+        Me.Controls.Add(Me.Button_Media)
+        Me.Controls.Add(Me.Button_Blackman2)
+        Me.Controls.Add(Me.Button12)
+        Me.Controls.Add(Me.Button11)
+        Me.Controls.Add(Me.Button14)
+        Me.Controls.Add(Me.Button15)
+        Me.Controls.Add(Me.Button16)
+        Me.Controls.Add(Me.Button_Barnsley)
+        Me.Controls.Add(Me.Button_Koch)
+        Me.Controls.Add(Me.Button_SierpinskiTriangle)
+        Me.Controls.Add(Me.Button10)
+        Me.Controls.Add(Me.Button_Mandalas)
+        Me.Controls.Add(Me.Button9)
+        Me.Controls.Add(Me.Button_CirculoPuntos)
         Me.Controls.Add(Me.Button_MandelbrotSet)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
@@ -452,4 +620,20 @@ Partial Class Form_Dibujo
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Button_MandelbrotSet As Button
+    Friend WithEvents Button_CirculoPuntos As Button
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button_Mandalas As Button
+    Friend WithEvents Button10 As Button
+    Friend WithEvents Button_SierpinskiTriangle As Button
+    Friend WithEvents Button_Koch As Button
+    Friend WithEvents Button_Barnsley As Button
+    Friend WithEvents Button14 As Button
+    Friend WithEvents Button15 As Button
+    Friend WithEvents Button16 As Button
+    Friend WithEvents Button11 As Button
+    Friend WithEvents Button12 As Button
+    Friend WithEvents Button_Blackman2 As Button
+    Friend WithEvents Button_Media As Button
+    Friend WithEvents Button_MediaBlackman As Button
 End Class
+
