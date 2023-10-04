@@ -227,34 +227,34 @@ Public Class Form_Dibujo
         Try
 
 
-                    Me.Canvas1 = New Bitmap(PictureBox1.Width, PictureBox1.Height)
-                    Dim offScreenDC As Graphics = Graphics.FromImage(Canvas1)
+            Me.Canvas1 = New Bitmap(PictureBox1.Width, PictureBox1.Height)
+            Dim offScreenDC As Graphics = Graphics.FromImage(Canvas1)
 
-                    Dim pen As Pen = New System.Drawing.Pen(Color.WhiteSmoke)
-                    Dim width As Integer = Me.Canvas1.Width
-                    Dim center As Integer = Me.Canvas1.Height / 2
-                    Dim height As Integer = Me.Canvas1.Height
-                    offScreenDC.DrawLine(pen, 0, center, width, center)
+            Dim pen As Pen = New System.Drawing.Pen(Color.WhiteSmoke)
+            Dim width As Integer = Me.Canvas1.Width
+            Dim center As Integer = Me.Canvas1.Height / 2
+            Dim height As Integer = Me.Canvas1.Height
+            offScreenDC.DrawLine(pen, 0, center, width, center)
 
-                    Dim leftLeft As Integer = 0
-                    Dim leftTop As Integer = 0
-                    Dim leftRight As Integer = width
-                    Dim leftBottom As Integer = center - 1
-                    Dim rightLeft As Integer = 0
-                    Dim rightTop As Integer = center + 1
-                    Dim rightRight As Integer = width
-                    Dim rightBottom As Integer = height
-                    Dim yCenterLeft As Double = (leftBottom - leftTop) / 2
-                    Dim yScaleLeft As Double = 0.5 * (leftBottom - leftTop) / 32768
-                    Dim xPrevLeft As Integer = 0, yPrevLeft As Integer = 0
+            Dim leftLeft As Integer = 0
+            Dim leftTop As Integer = 0
+            Dim leftRight As Integer = width
+            Dim leftBottom As Integer = center - 1
+            Dim rightLeft As Integer = 0
+            Dim rightTop As Integer = center + 1
+            Dim rightRight As Integer = width
+            Dim rightBottom As Integer = height
+            Dim yCenterLeft As Double = (leftBottom - leftTop) / 2
+            Dim yScaleLeft As Double = 0.5 * (leftBottom - leftTop) / 32768
+            Dim xPrevLeft As Integer = 0, yPrevLeft As Integer = 0
 
-                    Dim xCenterRight As Integer = rightTop + ((rightBottom - rightTop) / 2)
-                    Dim yScaleRight As Double = 0.5 * (rightBottom - rightTop) / 32768
-                    Dim xPrevRight As Integer = 0, yPrevRight As Integer = 0
-                    Dim yAxis As Integer = 0
-                    For xAxis As Integer = rightLeft + 1 To rightRight - 1
+            Dim xCenterRight As Integer = rightTop + ((rightBottom - rightTop) / 2)
+            Dim yScaleRight As Double = 0.5 * (rightBottom - rightTop) / 32768
+            Dim xPrevRight As Integer = 0, yPrevRight As Integer = 0
+            Dim yAxis As Integer = 0
+            For xAxis As Integer = rightLeft + 1 To rightRight - 1
 
-                        Dim a As Double = xAxis / rightRight
+                Dim a As Double = xAxis / rightRight
                 yAxis = center + (Math.Pow(a, 2) * Math.Sin(1 / a)) / 2 ' Math.Sqrt(a)
                 'y = ±(X^2 * Y^3 - (x2-1)3)^(1/2)
                 If xAxis = 0 Then
@@ -262,17 +262,17 @@ Public Class Form_Dibujo
                     yPrevRight = yAxis
                 Else
                     pen.Color = Color.LimeGreen
-                            offScreenDC.DrawLine(pen, xPrevRight, yPrevRight, xAxis, yAxis)
-                            xPrevRight = xAxis
-                            yPrevRight = yAxis
-                        End If
-                    Next
+                    offScreenDC.DrawLine(pen, xPrevRight, yPrevRight, xAxis, yAxis)
+                    xPrevRight = xAxis
+                    yPrevRight = yAxis
+                End If
+            Next
 
-                    PictureBox1.Image = Me.Canvas1
-                    offScreenDC.Dispose()
-                Catch ex As Exception
+            PictureBox1.Image = Me.Canvas1
+            offScreenDC.Dispose()
+        Catch ex As Exception
 
-                End Try
+        End Try
 
 
     End Sub
@@ -562,34 +562,34 @@ Public Class Form_Dibujo
         Try
 
 
-                Me.Canvas1 = New Bitmap(PictureBox1.Width, PictureBox1.Height)
-                Dim offScreenDC As Graphics = Graphics.FromImage(Canvas1)
+            Me.Canvas1 = New Bitmap(PictureBox1.Width, PictureBox1.Height)
+            Dim offScreenDC As Graphics = Graphics.FromImage(Canvas1)
 
-                Dim pen As Pen = New System.Drawing.Pen(Color.WhiteSmoke)
-                Dim width As Integer = Me.Canvas1.Width
-                Dim center As Integer = Me.Canvas1.Height / 2
-                Dim height As Integer = Me.Canvas1.Height
-                offScreenDC.DrawLine(pen, 0, center, width, center)
+            Dim pen As Pen = New System.Drawing.Pen(Color.WhiteSmoke)
+            Dim width As Integer = Me.Canvas1.Width
+            Dim center As Integer = Me.Canvas1.Height / 2
+            Dim height As Integer = Me.Canvas1.Height
+            offScreenDC.DrawLine(pen, 0, center, width, center)
 
-                Dim leftLeft As Integer = 0
-                Dim leftTop As Integer = 0
-                Dim leftRight As Integer = width
-                Dim leftBottom As Integer = center - 1
-                Dim rightLeft As Integer = 0
-                Dim rightTop As Integer = center + 1
-                Dim rightRight As Integer = width
-                Dim rightBottom As Integer = height
-                Dim yCenterLeft As Double = (leftBottom - leftTop) / 2
-                Dim yScaleLeft As Double = 0.5 * (leftBottom - leftTop) / 32768
-                Dim xPrevLeft As Integer = 0, yPrevLeft As Integer = 0
+            Dim leftLeft As Integer = 0
+            Dim leftTop As Integer = 0
+            Dim leftRight As Integer = width
+            Dim leftBottom As Integer = center - 1
+            Dim rightLeft As Integer = 0
+            Dim rightTop As Integer = center + 1
+            Dim rightRight As Integer = width
+            Dim rightBottom As Integer = height
+            Dim yCenterLeft As Double = (leftBottom - leftTop) / 2
+            Dim yScaleLeft As Double = 0.5 * (leftBottom - leftTop) / 32768
+            Dim xPrevLeft As Integer = 0, yPrevLeft As Integer = 0
 
-                Dim xCenterRight As Integer = rightTop + ((rightBottom - rightTop) / 2)
-                Dim yScaleRight As Double = 0.5 * (rightBottom - rightTop) / 32768
-                Dim xPrevRight As Integer = 0, yPrevRight As Integer = 0
-                Dim yAxis As Integer = 0
-                For xAxis As Integer = rightLeft + 1 To rightRight - 1
+            Dim xCenterRight As Integer = rightTop + ((rightBottom - rightTop) / 2)
+            Dim yScaleRight As Double = 0.5 * (rightBottom - rightTop) / 32768
+            Dim xPrevRight As Integer = 0, yPrevRight As Integer = 0
+            Dim yAxis As Integer = 0
+            For xAxis As Integer = rightLeft + 1 To rightRight - 1
 
-                    Dim a As Double = xAxis / rightRight
+                Dim a As Double = xAxis / rightRight
                 yAxis = center + (xAxis * Math.Sin(1 / a))  ' Math.Sqrt(a)
 
 
@@ -597,21 +597,21 @@ Public Class Form_Dibujo
                 ' Math.Sin(Math.Pow(yAxis, 2)) '= 0 CInt((xCenterRight + (_waveRight(_waveRight.Length / (rightRight - rightLeft) * xAxis) * yScaleRight)))
 
                 If xAxis = 0 Then
-                        xPrevRight = 0
-                        yPrevRight = yAxis
-                    Else
-                        pen.Color = Color.LimeGreen
-                        offScreenDC.DrawLine(pen, xPrevRight, yPrevRight, xAxis, yAxis)
-                        xPrevRight = xAxis
-                        yPrevRight = yAxis
-                    End If
-                Next
+                    xPrevRight = 0
+                    yPrevRight = yAxis
+                Else
+                    pen.Color = Color.LimeGreen
+                    offScreenDC.DrawLine(pen, xPrevRight, yPrevRight, xAxis, yAxis)
+                    xPrevRight = xAxis
+                    yPrevRight = yAxis
+                End If
+            Next
 
-                PictureBox1.Image = Me.Canvas1
-                offScreenDC.Dispose()
-            Catch ex As Exception
+            PictureBox1.Image = Me.Canvas1
+            offScreenDC.Dispose()
+        Catch ex As Exception
 
-            End Try
+        End Try
 
 
     End Sub
@@ -1090,6 +1090,80 @@ Public Class Form_Dibujo
         End Try
     End Sub
 
+
+    Private Sub Button_CirculoPuntos_Click(sender As Object, e As EventArgs) Handles Button_CirculoPuntos.Click
+        Try
+
+            Me.Canvas1 = New Bitmap(PictureBox1.Width, PictureBox1.Height)
+            Dim offScreenDC As Graphics = Graphics.FromImage(Canvas1)
+            Dim pen As Pen = New System.Drawing.Pen(Color.Gray)
+            Dim penTriangulo As Pen = New System.Drawing.Pen(Color.DarkOrange)
+            Dim width As Integer = Me.Canvas1.Width
+            Dim center As Integer = Me.Canvas1.Height / 2
+            Dim height As Integer = Me.Canvas1.Height
+            offScreenDC.DrawLine(pen, 0, center, width, center)
+            Dim leftLeft As Integer = 0
+            Dim leftTop As Integer = 0
+            Dim leftRight As Integer = width
+            Dim leftBottom As Integer = center - 1
+            Dim rightLeft As Integer = 0
+            Dim rightTop As Integer = center + 1
+            Dim rightRight As Integer = width
+            Dim rightBottom As Integer = height
+            Dim yCenterLeft As Double = (leftBottom - leftTop) / 2
+            Dim yScaleLeft As Double = 0.5 * (leftBottom - leftTop) / 32768
+            Dim xPrevLeft As Integer = 0, yPrevLeft As Integer = 0
+            Dim xCenterRight As Integer = rightTop + ((rightBottom - rightTop) / 2)
+            Dim yScaleRight As Double = 0.5 * (rightBottom - rightTop) / 32768
+            Dim xPrevRight As Integer = 0, yPrevRight As Integer = 0
+            Dim yAxis As Integer = 0
+
+
+
+            Dim punto1 As New Point(100, 50)
+            Dim punto2 As New Point(90, 130)
+            Dim punto3 As New Point(100, 200)
+
+
+            Dim x1 As Double = 250 + (100 * CSng(Math.Sin(10)))
+            Dim y1 As Double = 250 + (100 * CSng(Math.Cos(10)))
+            Dim x2 As Double = 250 + (100 * CSng(Math.Sin(50)))
+            Dim y2 As Double = 250 + (100 * CSng(Math.Cos(50)))
+            Dim x3 As Double = 250 + (100 * CSng(Math.Sin(90)))
+            Dim y3 As Double = 50 '+ (100 * CSng(Math.Cos(90)))
+
+            Dim a1 As Double = x1 - x2
+            Dim b1 As Double = y1 - y2
+            Dim c1 As Double = x1 - x3
+            Dim d1 As Double = y1 - y3
+
+            Dim e1 As Double = ((x1 * x1 - x2 * x2) + (y1 * y1 - y2 * y2)) / 2
+            Dim f1 As Double = ((x1 * x1 - x3 * x3) + (y1 * y1 - y3 * y3)) / 2
+
+            Dim h1 As Double = (d1 * e1 - b1 * f1) / (a1 * d1 - b1 * c1)
+            Dim k1 As Double = (a1 * f1 - c1 * e1) / (a1 * d1 - b1 * c1)
+
+            Dim r1 As Double = Math.Sqrt((x1 - h1) ^ 2 + (y1 - k1) ^ 2)
+
+            Dim points As New List(Of PointF)
+
+            For i As Integer = 0 To 360 Step 1
+                Dim x As Single = h1 + (r1 * CSng(Math.Sin(i)))
+                Dim y As Single = k1 + (r1 * CSng(Math.Cos(i)))
+                points.Add(New PointF(x, y))
+            Next
+
+            offScreenDC.DrawCurve(pen, points.ToArray())
+
+            PictureBox1.Image = Me.Canvas1
+            offScreenDC.Dispose()
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
     Private Sub Button_Circulo3PuntosOK_Click(sender As Object, e As EventArgs) Handles Button_Circulo3PuntosOK.Click
         'y = a · sen(b·x+c)+d
         'a = (y - d) / sen(b·x+c)
@@ -1272,7 +1346,7 @@ Public Class Form_Dibujo
             Dim offScreenDC As Graphics = Graphics.FromImage(Canvas1)
             offScreenDC.Clear(Color.White)
             Dim CentroX As Int16 = PictureBox1.Width / 2
-            dim CentroY as Int16 = PictureBox1.Height/2
+            Dim CentroY As Int16 = PictureBox1.Height / 2
             ' Crear un objeto Graphics a partir del objeto e
             Dim g As Graphics = Me.PictureBox1.CreateGraphics()
 
@@ -1318,8 +1392,8 @@ Public Class Form_Dibujo
 
 
             'Dim NumerosAleatoriosOrigen(PictureBox1.Width - 1) As Double
-            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
-
+            'Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            Dim NumerosAleatoriosFiltro() As Double
 
             If IsNothing(NumerosAleatoriosOrigen) Then
                 Dim Aleatorio As New Random
@@ -1359,8 +1433,8 @@ Public Class Form_Dibujo
             FiltroInstancias = New Class_FIR
             FiltroInstancias.FiltroFactor = Replace(TextBox_FactorFIR.Text, ".", ",")
 
-            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
-
+            'Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            Dim NumerosAleatoriosFiltro() As Double
 
 
             If IsNothing(NumerosAleatoriosOrigen) Then
@@ -1397,8 +1471,8 @@ Public Class Form_Dibujo
             FiltroInstancias = New Class_FIR
             FiltroInstancias.FiltroFactor = Replace(TextBox_FactorFIR.Text, ".", ",")
 
-            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
-
+            'Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            Dim NumerosAleatoriosFiltro() As Double
 
 
             If IsNothing(NumerosAleatoriosOrigen) Then
@@ -1436,8 +1510,8 @@ Public Class Form_Dibujo
             FiltroInstancias = New Class_FIR
             FiltroInstancias.FiltroFactor = Replace(TextBox_FactorFIR.Text, ".", ",")
 
-            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
-
+            'Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            Dim NumerosAleatoriosFiltro() As Double
 
 
             If IsNothing(NumerosAleatoriosOrigen) Then
@@ -1481,7 +1555,8 @@ Public Class Form_Dibujo
             KalmanInstancias.setQdistance(Replace(TextBox_Qdistance.Text, ".", ","))
             KalmanInstancias.setRmeasure(Replace(TextBox_KalmanGanancia.Text, ".", ","))
 
-            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            'Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            Dim NumerosAleatoriosFiltro() As Double
 
             If IsNothing(NumerosAleatoriosOrigen) Then
                 Dim Aleatorio As New Random
@@ -1522,7 +1597,8 @@ Public Class Form_Dibujo
             KalmanInstancias.setQdistance(Replace(TextBox_Qdistance.Text, ".", ","))
             KalmanInstancias.setRmeasure(Replace(TextBox_KalmanGanancia.Text, ".", ","))
 
-            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            'Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            Dim NumerosAleatoriosFiltro() As Double
 
             If IsNothing(NumerosAleatoriosOrigen) Then
                 Dim Aleatorio As New Random
@@ -1580,6 +1656,10 @@ Public Class Form_Dibujo
     Private sum As Double
 
     Public Function Filter(value As Double) As Double
+        If Not IsNothing(window) Then
+
+        End If
+
         If window.Count = windowSize Then
             sum -= window.Dequeue()
         End If
@@ -1616,7 +1696,8 @@ Public Class Form_Dibujo
 
 
 
-            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            'Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            Dim NumerosAleatoriosFiltro() As Double
 
             If IsNothing(NumerosAleatoriosOrigen) Then
                 Dim Aleatorio As New Random
@@ -1646,6 +1727,49 @@ Public Class Form_Dibujo
         End Try
     End Sub
 
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Try
+            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+
+            If IsNothing(NumerosAleatoriosOrigen) Then
+                Dim Aleatorio As New Random
+                NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 2) {}
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
+                For indice As Integer = 0 To (PictureBox1.Width - 1) / 4
+                    Dim NumeroAleatorio As Integer = Aleatorio.Next(-PictureBox1.Height / 10, PictureBox1.Height / 10) ' Aleatorio.Next(-1 * PictureBox1.Height / 4, PictureBox1.Height / 4)
+                    NumerosAleatoriosOrigen(indice) = NumeroAleatorio
+
+
+                Next
+                NumerosAleatoriosFiltro = MovingAverage(NumerosAleatoriosOrigen, 1)
+                ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
+            Else
+
+                'For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1) / 2
+
+                '    NumerosAleatoriosFiltro(indice) = w '
+
+                'Next
+                NumerosAleatoriosFiltro = MovingAverage(NumerosAleatoriosOrigen, NumerosAleatoriosOrigen.Length / 4)
+
+            End If
+            Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Function MovingAverage(ByVal data() As Double, ByVal period As Integer) As Double()
+        Dim result() As Double = New Double(data.Count - period) {}
+        For i As Integer = 0 To data.Count - period
+            Dim sum As Double = 0
+            For j As Integer = i To i + period - 1
+                sum += data(j)
+            Next
+            'result.Add(sum / period)
+            result(i) = CInt(sum / period) '+ (1)
+        Next
+        Return result
+    End Function
 
     Private ReadOnly a0 As Double
     Private ReadOnly a1 As Double
@@ -1691,13 +1815,17 @@ Public Class Form_Dibujo
             Dim a1 As Double = 0.5
             Dim a2 As Double = alpha / 2
 
-            a0 = 0.42
-            a1 = 0.5
-            a2 = 0.08
+            a0 = (1 - alpha) / 2
+            a1 = 10.5
+            a2 = 1.08
+            'Dim a0 As Double = (1 - alpha) / 2
+            'Dim a1 As Double = 0.5
+            'Dim a2 As Double = alpha / 2
 
 
+            'Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            Dim NumerosAleatoriosFiltro() As Double
 
-            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
 
             If IsNothing(NumerosAleatoriosOrigen) Then
                 Dim Aleatorio As New Random
@@ -1727,6 +1855,48 @@ Public Class Form_Dibujo
 
         End Try
     End Sub
+    Private Sub Button_Blackman2_Click(sender As Object, e As EventArgs) Handles Button_Blackman2.Click
+        Try
+            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+
+            If IsNothing(NumerosAleatoriosOrigen) Then
+                Dim Aleatorio As New Random
+                NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 2) {}
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
+                For indice As Integer = 0 To (PictureBox1.Width - 1) / 4
+                    Dim NumeroAleatorio As Integer = Aleatorio.Next(-PictureBox1.Height / 10, PictureBox1.Height / 10) ' Aleatorio.Next(-1 * PictureBox1.Height / 4, PictureBox1.Height / 4)
+                    NumerosAleatoriosOrigen(indice) = NumeroAleatorio
+
+
+                Next
+                NumerosAleatoriosFiltro = Blackman(NumerosAleatoriosOrigen)
+                ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
+            Else
+                ' NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
+
+                NumerosAleatoriosFiltro = Blackman(NumerosAleatoriosOrigen)
+
+            End If
+            Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Function Blackman(ByVal data() As Double) As Double()
+        Dim result() As Double = New Double(data.Count - 1) {}
+        Dim alpha As Double = 0.16
+        Dim a0 As Double = (1 - alpha) / 2
+        Dim a1 As Double = 0.5
+        Dim a2 As Double = alpha / 2
+        Dim N As Integer = data.Count
+        For i As Integer = 0 To N - 1
+            Dim x As Double = 2 * Math.PI * i / (N - 1)
+            Dim w As Double = a0 - a1 * Math.Cos(x) + a2 * Math.Cos(2 * x)
+            'result.Add(data(i) * w)
+            result(i) = data(i) * w
+        Next
+        Return result
+    End Function
 
     Private Sub Button_Softmax_Click(sender As Object, e As EventArgs) Handles Button_Softmax.Click
         Try
@@ -1778,6 +1948,17 @@ Public Class Form_Dibujo
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Try
+            'Dim result() As Double = New Double(PictureBox1.Width - 1) {}
+            Dim alpha As Double = 0.03 '0.16
+            Dim a0 As Double = (1 - alpha) / 2
+            Dim a1 As Double = 0.9 '0.9
+            Dim a2 As Double = alpha / 2
+            Dim N As Integer = PictureBox1.Width
+
+
+            a0 = (1 - 0.16) / 2
+            a1 = 0.5
+            a2 = 1.08
 
             Dim FiltroInstancias As Class_FIR
             FiltroInstancias = New Class_FIR
@@ -1788,11 +1969,14 @@ Public Class Form_Dibujo
             KalmanInstancias.setQdistance(Replace(TextBox_Qdistance.Text, ".", ","))
             KalmanInstancias.setRmeasure(Replace(TextBox_KalmanGanancia.Text, ".", ","))
 
+            Me.windowSize = 10
+            window = New Queue(Of Double)(windowSize)
+            sum = 0
 
 
-
-
-            Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+            'Math.Round(Number, 2, MidpointRounding.AwayFromZero
+            ' Dim NumerosAleatoriosFiltro(Math.Round((PictureBox1.Width / 2), 0, MidpointRounding.AwayFromZero)) As Double
+            Dim NumerosAleatoriosFiltro() As Double
 
             If IsNothing(NumerosAleatoriosOrigen) Then
                 Dim Aleatorio As New Random
@@ -1801,26 +1985,53 @@ Public Class Form_Dibujo
                 For indice As Integer = 0 To (PictureBox1.Width - 1) / 4
                     Dim NumeroAleatorio As Integer = Aleatorio.Next(-PictureBox1.Height / 10, PictureBox1.Height / 10) ' Aleatorio.Next(-1 * PictureBox1.Height / 4, PictureBox1.Height / 4)
                     NumerosAleatoriosOrigen(indice) = NumeroAleatorio
-                    NumerosAleatoriosFiltro(indice) = KalmanInstancias.getDistance(FiltroInstancias.ObtenerValor2(NumerosAleatoriosOrigen(indice)), 2)
+                    Dim x As Double = 2 * Math.PI * indice / (N - 1)
+                    Dim w As Double = a0 - a1 * Math.Cos(x) + a2 * Math.Cos(2 * x)
+                    Dim aaaa As Double = FiltroInstancias.ObtenerValor3(NumerosAleatoriosOrigen(indice))
+                    NumerosAleatoriosFiltro(indice) = Filter(KalmanInstancias.getDistance(aaaa, 2)) * w
                 Next
                 ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
             Else
                 ' NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 4) {}
+                Try
+                    NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
+                    For indice As Integer = 0 To ((NumerosAleatoriosOrigen.Length - 1) / 2) - 1
+                        Try
+                            'a0 * NumerosAleatoriosOrigen(indice) + a1 * NumerosAleatoriosOrigen(indice) + a2 * NumerosAleatoriosOrigen(indice)
+                            Dim x As Double = 2 * Math.PI * indice / (N - 1)
+                            Dim w As Double = a0 - a1 * Math.Cos(x) + a2 * Math.Cos(2 * x)
+                            'result.Add(data(i) * w)
 
-                For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1) / 2
+                            Dim aaaa As Double = FiltroInstancias.ObtenerValor3(NumerosAleatoriosOrigen(indice))
+                            Dim bbbb As Double = Filter(KalmanInstancias.getDistance(aaaa, 2)) * w
+                            NumerosAleatoriosFiltro(indice) = bbbb 'Filter(KalmanInstancias.getDistance(aaaa, 2)) * w 'Filter(KalmanInstancias.getDistance(FiltroInstancias.ObtenerValor((NumerosAleatoriosOrigen(indice))), 2)) * w
 
-                    NumerosAleatoriosFiltro(indice) = KalmanInstancias.getDistance(FiltroInstancias.ObtenerValor2(NumerosAleatoriosOrigen(indice)), 2)
+                        Catch ex As Exception
 
-                Next
+                        End Try
 
+                    Next
+                Catch ex As Exception
+
+                End Try
 
             End If
+
+
             Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
 
         Catch ex As Exception
 
         End Try
     End Sub
+
+
+
+
+#End Region
+
+
+#Region "frectales y alguno "
 
     Dim Pasos As Integer = 100000
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -1949,8 +2160,582 @@ Public Class Form_Dibujo
 
     End Sub
 
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Try
+            'Dim width As Integer = Me.ClientSize.Width
+            'Dim height As Integer = Me.ClientSize.Height
+            'Dim bitmap As New Bitmap(width, height)
+            'Dim g1 As Graphics = Graphics.FromImage(bitmap)
+            'Dim xMin As Double = -1.5
+            'Dim xMax As Double = 1.5
+            'Dim yMin As Double = -1.5
+            'Dim yMax As Double = 1.5
+
+            'Dim maxIterations As Integer = 100
+            'Dim escapeRadius As Double = 2.0
+
+            'For x As Integer = 0 To width - 1
+            '    For y As Integer = 0 To height - 1
+            '        Dim zx As Double = xMin + (xMax - xMin) * x / (width - 1)
+            '        Dim zy As Double = yMin + (yMax - yMin) * y / (height - 1)
+
+            '        Dim c As New Complex(-0.835, -0.2321)
+            '        Dim z As New Complex(zx, zy)
+
+            '        Dim i As Integer = 0
+            '        While i < maxIterations AndAlso z.Magnitude < escapeRadius
+            '            z = z * z + c
+            '            i += 1
+            '        End While
+
+            '        Dim color As Color
+            '        If i = maxIterations Then
+            '            color = Color.Black
+            '        Else
+            '            color = Color.FromArgb(255, i Mod 32 * 8, i Mod 16 * 16, i Mod 8 * 32)
+            '        End If
+
+            '        bitmap.SetPixel(x, y, color)
+            '    Next
+            'Next
+
+            'g1.Graphics.DrawImage(bitmap, 0, 0)
+            Dim width As Integer = Me.ClientSize.Width
+            Dim height As Integer = Me.ClientSize.Height
+            Dim bitmap As New Bitmap(width, height)
+            Dim g1 As Graphics = Graphics.FromImage(bitmap)
+            Dim xMin As Double = -1.5
+            Dim xMax As Double = 1.5
+            Dim yMin As Double = -1.5
+            Dim yMax As Double = 1.5
+
+            Dim maxIterations As Integer = 100
+            Dim escapeRadius As Double = 2.0
+
+            For x As Integer = 0 To width - 1
+                For y As Integer = 0 To height - 1
+                    Dim zx As Double = xMin + (xMax - xMin) * x / (width - 1)
+                    Dim zy As Double = yMin + (yMax - yMin) * y / (height - 1)
+
+                    Dim fcReal As Double = -0.835
+                    Dim fcImaginary As Double = -0.2321
+
+                    Dim zReal As Double = zx
+                    Dim zImaginary As Double = zy
+
+                    Dim i As Integer = 0
+                    While i < maxIterations AndAlso Math.Sqrt(zReal * zReal + zImaginary * zImaginary) < escapeRadius
+                        Dim tempReal As Double = zReal * zReal - zImaginary * zImaginary + fcReal
+                        Dim tempImaginary As Double = 2.0 * zReal * zImaginary + fcImaginary
+                        zReal = tempReal
+                        zImaginary = tempImaginary
+                        i += 1
+                    End While
+
+                    Dim color As Color
+                    If i = maxIterations Then
+                        color = Color.Black
+                    Else
+                        color = Color.FromArgb(255, i Mod 32 * 8, i Mod 16 * 16, i Mod 8 * 32)
+                    End If
+
+                    bitmap.SetPixel(x, y, color)
+                Next
+            Next
+
+            g1.DrawImage(bitmap, 0, 0)
+            PictureBox1.Image = bitmap
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button_Mandalas_Click(sender As Object, e As EventArgs) Handles Button_Mandalas.Click
+        Try
+            'Dim x As Long, y As Long, i As Long, j As Long
+            'Dim zx As Double, zy As Double, cx As Double, cy As Double
+            'Dim zoom As Double, temp As Double
+            'Dim maxiter As Long, color As Long
+            'Dim pic As PictureBox
+            ''d pic = Me.Picture1
+            'PictureBox1.ScaleMode = vbPixels
+            'PictureBox1.AutoRedraw = True
+            'zoom = 1
+            'maxiter = 255
+            'For y = 0 To PictureBox1.ScaleHeight
+            '    For x = 0 To PictureBox1.ScaleWidth
+            '        cx = (x - PictureBox1.ScaleWidth / 2) / (0.5 * zoom * PictureBox1.ScaleWidth) - 0.5
+            '        cy = (y - PictureBox1.ScaleHeight / 2) / (0.5 * zoom * PictureBox1.ScaleHeight)
+            '        zx = 0
+            '        zy = 0
+            '        i = 0
+            '        Do While zx * zx + zy * zy < 4 And i < maxiter
+            '            temp = zx * zx - zy * zy + cx
+            '            zy = 2 * zx * zy + cy
+            '            zx = temp
+            '            i = i + 1
+            '        Loop
+            '        If i = maxiter Then
+            '            color = RGB(0, 0, 0)
+            '        Else
+            '            color = RGB(i, i, i)
+            '        End If
+            '        PictureBox1.PSet(x, y), color
+            '    Next x
+            'Next y
+            Dim PosicionX As Integer = 0
+            Dim PosicionY As Integer = 100
+            Dim x As Long, y As Long, i As Long, j As Long
+            Dim zx As Double, zy As Double, cx As Double, cy As Double
+            Dim zoom As Double, temp As Double
+            Dim maxiter As Long
+            Dim color As Color
+            Dim bitmap As New Bitmap(PictureBox1.Width, PictureBox1.Height)
+            Dim g1 As Graphics = Graphics.FromImage(bitmap)
+            zoom = 1.0
+            maxiter = 255
+            For y = 0 To bitmap.Height - 1
+                For x = 0 To bitmap.Width - 1
+                    cx = (x - bitmap.Width / 2) / (0.5 * zoom * bitmap.Width) - 0.5
+                    cy = (y - bitmap.Height / 2) / (0.5 * zoom * bitmap.Height)
+                    zx = 0
+                    zy = 0
+                    i = 0
+                    Do While zx * zx + zy * zy < 4 And i < maxiter
+                        temp = zx * zx - zy * zy + cx
+                        zy = 2 * zx * zy + cy
+                        zx = temp
+                        i = i + 1
+                    Loop
+                    If i = maxiter Then
+                        color = Color.FromArgb(0, 0, 0)
+                    Else
+                        color = Color.FromArgb(i, i, i)
+                        'bitmap.SetPixel(x, y, RGB(i, i, i))
+                    End If
+                    bitmap.SetPixel(x, y, color)
+                Next x
+            Next y
+            PictureBox1.Image = bitmap
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Try
+            Dim x As Long, y As Long, i As Long, j As Long
+            Dim zx As Double, zy As Double, cx As Double, cy As Double
+            Dim zoom As Double, temp As Double
+            Dim maxiter As Long
+            Dim color As Color
+            Dim bitmap As New Bitmap(PictureBox1.Width, PictureBox1.Height)
+            Dim g1 As Graphics = Graphics.FromImage(bitmap)
+            zoom = 1
+            maxiter = 255
+            For y = 0 To bitmap.Height - 1
+                For x = 0 To bitmap.Width - 1
+                    cx = (x - bitmap.Width / 2) / (0.5 * zoom * bitmap.Width) - 0.5
+                    cy = (y - bitmap.Height / 2) / (0.5 * zoom * bitmap.Height)
+                    zx = 0
+                    zy = 0
+                    i = 0
+                    Do While zx * zx + zy * zy < 4 And i < maxiter
+                        temp = zx * zx - zy * zy + cx
+                        zy = 2 * zx * zy + cy
+                        zx = temp
+                        i = i + 1
+                    Loop
+                    If i = maxiter Then
+                        color = Color.FromArgb(0, 0, 0)
+                    Else
+                        color = Color.FromArgb(i, i, i)
+                        'bitmap.SetPixel(x, y, RGB(i, i, i))
+                    End If
+                    bitmap.SetPixel(x, y, color)
+                Next x
+            Next y
+            PictureBox1.Image = bitmap
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button_SierpinskiTriangle_Click(sender As Object, e As EventArgs) Handles Button_SierpinskiTriangle.Click
+        Try
+            '        Dim x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer, x3 As Integer, y3 As Integer
+            '        Dim i As Integer, j As Integer, k As Integer, n As Integer
+            '        Dim x As Integer, y As Integer, r As Integer
+            '        Dim pic As PictureBox
+            'Set pic = Me.Picture1
+            'pic.ScaleMode = vbPixels
+            '        pic.AutoRedraw = True
+            '        x1 = 0
+            '        y1 = pic.ScaleHeight
+            '        x2 = pic.ScaleWidth
+            '        y2 = pic.ScaleHeight
+            '        x3 = pic.ScaleWidth / 2
+            '        y3 = 0
+            '        n = 7
+            '        For i = 0 To n
+            '            r = 2 ^ i
+            '            For j = 0 To r - 1
+            '                For k = 0 To r - 1
+            '                    x = (j + 0.5) * pic.ScaleWidth / r
+            '                    y = (k + 0.5) * pic.ScaleHeight / r
+            '                    If (x Mod (2 * pic.ScaleWidth / (2 ^ (i + 1))) = 0 And y Mod (2 * pic.ScaleHeight / (2 ^ (i + 1))) = 0) Then
+            '                        pic.Line(x + x1, y + y1)-(x + x2, y + y2), vbBlack
+            '                pic.Line(x + x1, y + y1)-(x + x3, y + y3), vbBlack
+            '                pic.Line(x + x2, y + y2)-(x + x3, y + y3), vbBlack
+            '            End If
+            '                Next k
+            '            Next j
+            '        Next i
+            Dim x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer, x3 As Integer, y3 As Integer
+            Dim i As Integer, j As Integer, k As Integer, n As Integer
+            Dim x As Integer, y As Integer, r As Integer
+            Dim bitmap As New Bitmap(PictureBox1.Width, PictureBox1.Height)
+            Dim g1 As Graphics = Graphics.FromImage(bitmap)
+            Dim Lapiz As New Pen(Color.Black)
+            x1 = 0
+            y1 = bitmap.Height
+            x2 = bitmap.Width
+            y2 = bitmap.Height
+            x3 = bitmap.Width / 2
+            y3 = 0
+            n = 7
+            For i = 0 To n - 1
+                r = 2 ^ i
+                For j = 0 To r - 1
+                    For k = 0 To r - 1
+                        Try
+                            x = (j + 0.5) * bitmap.Width / r
+                            y = (k + 0.5) * bitmap.Height / r
+                            If (x Mod (2 * bitmap.Width / (2 ^ (i + 1))) = 0 And y Mod (2 * bitmap.Height / (2 ^ (i + 1))) = 0) Then
+                                g1.DrawLine(Lapiz, x + x1, y + y1, x + x2, y + y2)
+                                g1.DrawLine(Lapiz, x + x1, y + y1, x + x3, y + y3)
+                                g1.DrawLine(Lapiz, x + x2, y + y2, x + x3, y + y3)
+                            End If
+                        Catch ex As Exception
+
+                        End Try
+
+                    Next k
+                Next j
+            Next i
+            'g1.DrawImage(bitmap, 0, 0)
+            PictureBox1.Image = bitmap
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button_Koch_Click(sender As Object, e As EventArgs) Handles Button_Koch.Click
+        'Try
+        '    Dim x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer
+        '    Dim i As Integer, j As Integer, k As Integer, n As Integer
+        '    Dim x() As Integer, y() As Integer
+        Dim bitmap As New Bitmap(PictureBox1.Width, PictureBox1.Height)
+        '    Dim g1 As Graphics = Graphics.FromImage(bitmap)
+
+        '    Dim Lapiz As New Pen(Color.Black)
+        '    x1 = 0
+        '    y1 = bitmap.Height / 2
+        '    x2 = bitmap.Width
+        '    y2 = bitmap.Height / 2
+        '    n = 5
+        '    ReDim x(2 ^ n)
+        '    ReDim y(2 ^ n)
+        '    x(0) = x1
+        '    y(0) = y1
+        '    x(2 ^ n) = x2
+        '    y(2 ^ n) = y2
+        '    For i = 1 To n - 1
+        '        For j = 0 To 2 ^ (i - 1) - 1
+        '            Try
+        '                Dim IndiceX As Integer = 2 ^ (i - 1) + j
+        '                Dim IndiceX2 As Integer = 2 ^ (i - 1) - j - 1
+        '                'Dim IndiceX3 As Integer = 2 ^ (i - 1) - j - 1
+        '                Dim IndiceX4 As Integer = 2 ^ (i - 2) - j
+        '                If IndiceX < 0 Then
+        '                    IndiceX = 0
+        '                End If
+        '                If IndiceX2 < 0 Then
+        '                    IndiceX2 = 0
+        '                End If
+        '                If IndiceX4 < 0 Then
+        '                    IndiceX4 = 0
+        '                End If
+        '                If IndiceX4 < 0 Then
+        '                    IndiceX4 = 0
+        '                End If
+        '                Dim resultadoX As Double = x(IndiceX2) + (x(IndiceX2) - x(IndiceX4))
+        '                'x(2 ^ (i - 1) + j) = x(2 ^ (i - 1) - j - 1) + (x(2 ^ (i - 1) - j - 1) - x(2 ^ (i - 2) - j))
+        '                If IndiceX < x.Length Then
+        '                    x(IndiceX) = resultadoX
+        '                End If
+
+        '                'y(2 ^ (i - 1) + j) = y(2 ^ (i - 1) - j - 1) - (y(2 ^ (i - 2) - j) - y(2 ^ (i - 1) - j - 1))
+        '                Dim IndiceY As Integer = 2 ^ (i - 1) + j
+        '                Dim IndiceY1 As Integer = 2 ^ (i - 1) - j - 1
+        '                Dim IndiceY2 As Integer = 2 ^ (i - 2) - j
+        '                Dim IndiceY3 As Integer = 2 ^ (i - 1) - j - 1
+        '                If IndiceY2 < 0 Then
+        '                    IndiceY2 = 0
+        '                End If
+        '                Dim resultadoY As Double = y(IndiceY1) - (y(IndiceY2) - y(IndiceY3))
+        '                If IndiceY < y.Length Then
+        '                    y(IndiceY) = resultadoY
+        '                End If
+        '            Catch ex As Exception
+
+        '            End Try
+
+
+        '        Next j
+        '    Next i
+        '    For i = 0 To 2 ^ n - 2
+        '        g1.DrawLine(Lapiz, x(i), y(i), x(i + 1), y(i + 1))
+        '    Next i
+        '    PictureBox1.Image = bitmap
+        'Catch ex As Exception
+
+        'End Try
+        Try
+            DrawKochCurve(bitmap, 10)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+
+    Private Sub DrawKochCurve(ByVal bitmap As Bitmap, ByVal iterations As Integer)
+        Dim g As Graphics = Graphics.FromImage(bitmap)
+        Dim p1 As New Point(0, bitmap.Height / 2)
+        Dim p2 As New Point(bitmap.Width, bitmap.Height / 2)
+        DrawKochLine(g, p1, p2, iterations)
+        '    Next i
+        PictureBox1.Image = bitmap
+    End Sub
+
+    Private Sub DrawKochLine(ByVal g As Graphics, ByVal p1 As Point, ByVal p2 As Point, ByVal iterations As Integer)
+        If iterations = 0 Then
+            g.DrawLine(Pens.Black, p1, p2)
+        Else
+            Dim dx As Integer = (p2.X - p1.X) / 3
+            Dim dy As Integer = (p2.Y - p1.Y) / 3
+            Dim pA As New Point(p1.X + dx, p1.Y + dy)
+            Dim pB As New Point(p2.X - dx, p2.Y - dy)
+            Dim vX As Integer = pB.X - pA.X
+            Dim vY As Integer = pB.Y - pA.Y
+            Dim vZ As Integer = CInt(Math.Sqrt(vX * vX + vY * vY))
+            Dim pC As New Point(pA.X + vX / 2 - CInt(vY / (2 * Math.Sqrt(3))), pA.Y + vY / 2 + CInt(vX / (2 * Math.Sqrt(3))))
+            DrawKochLine(g, p1, pA, iterations - 1)
+            DrawKochLine(g, pA, pC, iterations - 1)
+            DrawKochLine(g, pC, pB, iterations - 1)
+            DrawKochLine(g, pB, p2, iterations - 1)
+        End If
+    End Sub
+
+    Private Sub Button_Barnsley_Click(sender As Object, e As EventArgs) Handles Button_Barnsley.Click
+        Try
+            Dim x As Double = 100
+            Dim y As Double = 100
+            Dim x1 As Double = 10
+            Dim y1 As Double = 10
+            Dim x2 As Double = 40
+            Dim y2 As Double = 40
+            Dim x3 As Double = 70
+            Dim y3 As Double = 70
+            Dim r As New Random()
+            Dim bitmap As New Bitmap(PictureBox1.Width, PictureBox1.Height)
+            Dim g As Graphics = Graphics.FromImage(Bitmap)
+            g.Clear(Color.White)
+            For i As Integer = 0 To 10000
+                Dim p As Double = r.NextDouble()
+                If p < 0.01 Then
+                    x1 = 0
+                    y1 = 0.16 * y
+                    x2 = 0
+                    y2 = y1
+                    x3 = 0.0
+                    y3 = 0.0
+                ElseIf p < 0.86 Then
+                    x1 = 0.85 * x
+                    y1 = 0.04 * y
+                    x2 = -0.04 * x
+                    y2 = 0.85 * y + 1.6
+                    x3 = 0.15 * x
+                    y3 = 0.83 * y + 1.6
+                ElseIf p < 0.93 Then
+                    x1 = 0.2 * x - 0.26 * y
+                    y1 = 0.23 * x + 0.22 * y + 1.6
+                    x2 = -0.15 * x + 0.28 * y
+                    y2 = 0.26 * x + 0.24 * y + 0.44
+                    x3 = 0.85 * x + 0.04 * y
+                    y3 = -0.04 * x + 0.85 * y + 1.6
+                Else
+                    x1 = 0.2 * x + 0.23 * y
+                    y1 = -0.26 * x + 0.22 * y + 1.6
+                    x2 = -0.15 * x + 0.28 * y
+                    y2 = 0.26 * x + 0.24 * y + 0.44
+                    x3 = 0.85 * x + 0.04 * y
+                    y3 = -0.04 * x + 0.85 * y + 1.6
+                End If
+                x = x1
+                y = y1
+                g.FillRectangle(Brushes.Green, CSng(x * 50 + 200), CSng(y * 50 + 500), 1, 1)
+            Next
+            PictureBox1.Image = bitmap
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Try
+            Dim bitmap As New Bitmap(PictureBox1.Width, PictureBox1.Height)
+            'Dim g As Graphics = Graphics.FromImage(Bitmap)
+            'Dim width As Integer = Bitmap.Width
+            'Dim height As Integer = Bitmap.Height
+            'Dim xmin As Double = -1.5
+            'Dim xmax As Double = 1.5
+            'Dim ymin As Double = -1.5
+            'Dim ymax As Double = 1.5
+            'Dim maxIter As Integer = 1000
+            'Dim palette(maxIter) As Color
+            'For i As Integer = 0 To maxIter - 1
+            '    palette(i) = Color.FromArgb(i Mod 8 * 32, i Mod 16 * 16, i Mod 32 * 8)
+            'Next
+            'For x As Integer = 0 To width - 1
+            '    For y As Integer = 0 To height - 1
+            '        Dim z As New Complex(x / width * (xmax - xmin) + xmin, y / height * (ymax - ymin) + ymin)
+            '        Dim i As Integer = 0
+            '        While i < maxIter AndAlso z.Magnitude < 2
+            '            z = z * z + c
+            '            i += 1
+            '        End While
+            '        Bitmap.SetPixel(x, y, palette(i))
+            '    Next
+            'Next
+            'c: -1,3 + 0,00525·i; -0,72 – 0,196·i; -0,1 + 0,87·i y -0,51 – 0,601·i,
+            Dim cReal As Double = -0.1
+            Dim cImag As Double = 0.87
+            Dim g As Graphics = Graphics.FromImage(Bitmap)
+            Dim width As Integer = Bitmap.Width
+            Dim height As Integer = Bitmap.Height
+            Dim xmin As Double = -1.5
+            Dim xmax As Double = 1.5
+            Dim ymin As Double = -1.5
+            Dim ymax As Double = 1.5
+            Dim maxIter As Integer = 100
+            Dim palette(maxIter) As Color
+            For i As Integer = 0 To maxIter - 1
+                palette(i) = Color.FromArgb(i Mod 8 * 32, i Mod 16 * 16, i Mod 32 * 8)
+            Next
+            For x As Integer = 0 To width - 1
+                For y As Integer = 0 To height - 1
+                    Dim zx As Double = x / width * (xmax - xmin) + xmin
+                    Dim zy As Double = y / height * (ymax - ymin) + ymin
+                    Dim i As Integer = 0
+                    While i < maxIter AndAlso zx * zx + zy * zy < 4
+                        Dim zxNew As Double = zx * zx - zy * zy + cReal
+                        Dim zyNew As Double = 2 * zx * zy + cImag
+                        zx = zxNew
+                        zy = zyNew
+                        i += 1
+                    End While
+                    Bitmap.SetPixel(x, y, palette(i))
+                Next
+            Next
+            PictureBox1.Image = bitmap
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button_Media_Click(sender As Object, e As EventArgs) Handles Button_Media.Click
+        Try
+
+            'Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+
+            Dim NumerosAleatoriosFiltro() As Double
+
+            If IsNothing(NumerosAleatoriosOrigen) Then
+
+                Dim Aleatorio As New Random
+                NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 2) {}
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
+                For indice As Integer = 0 To (PictureBox1.Width - 3)
+                    Dim NumeroAleatorio As Integer = Aleatorio.Next(-PictureBox1.Height / 10, PictureBox1.Height / 10) ' Aleatorio.Next(-1 * PictureBox1.Height / 4, PictureBox1.Height / 4)
+                    NumerosAleatoriosOrigen(indice) = NumeroAleatorio
+                    NumerosAleatoriosFiltro(indice) = (NumerosAleatoriosOrigen(indice) + NumerosAleatoriosOrigen(indice + 1)) / 2
+                Next
+                ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
+            Else
+                NumerosAleatoriosFiltro = New Double(NumerosAleatoriosOrigen.Length - 1) {}
+                ' NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 4) {}
+
+                For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 3)
+
+                    NumerosAleatoriosFiltro(indice) = (NumerosAleatoriosOrigen(indice) + NumerosAleatoriosOrigen(indice + 1)) / 2
+
+                Next
+
+
+            End If
+            Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button_MediaBlackman_Click(sender As Object, e As EventArgs) Handles Button_MediaBlackman.Click
+        Try
+
+            'Dim NumerosAleatoriosFiltro((PictureBox1.Width - 1) / 2) As Double
+
+            Dim NumerosAleatoriosFiltro() As Double
+
+            If IsNothing(NumerosAleatoriosOrigen) Then
+
+                Dim Aleatorio As New Random
+                NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 2) {}
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
+                For indice As Integer = 0 To (PictureBox1.Width - 3)
+                    Dim NumeroAleatorio As Integer = Aleatorio.Next(-PictureBox1.Height / 10, PictureBox1.Height / 10) ' Aleatorio.Next(-1 * PictureBox1.Height / 4, PictureBox1.Height / 4)
+                    NumerosAleatoriosOrigen(indice) = NumeroAleatorio
+                    NumerosAleatoriosFiltro(indice) = (NumerosAleatoriosOrigen(indice) + NumerosAleatoriosOrigen(indice + 1)) / 2
+                Next
+                ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
+            Else
+                NumerosAleatoriosFiltro = New Double(NumerosAleatoriosOrigen.Length - 1) {}
+                ' NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 4) {}
+
+                For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 3)
+
+                    NumerosAleatoriosFiltro(indice) = (NumerosAleatoriosOrigen(indice) + NumerosAleatoriosOrigen(indice + 1)) / 2
+
+                Next
+
+
+            End If
+
+            NumerosAleatoriosFiltro = Blackman(NumerosAleatoriosFiltro)
+            Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+
 
 
 #End Region
-
 End Class
