@@ -1407,6 +1407,7 @@ Public Class Form_Dibujo
 
             Else
                 Try
+                    NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                     For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1)
 
                         NumerosAleatoriosFiltro(indice) = KalmanInstancias.getDistance(NumerosAleatoriosOrigen(indice), 1) ' * -1
@@ -1419,7 +1420,7 @@ Public Class Form_Dibujo
 
             End If
 
-
+            'Grafica.RenderTimeDomaiSimple(PictureBox1,)
             Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
 
         Catch ex As Exception
@@ -1449,7 +1450,7 @@ Public Class Form_Dibujo
                 ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
             Else
                 ' NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 4) {}
-
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                 For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1) / 2
 
                     NumerosAleatoriosFiltro(indice) = FiltroInstancias.ObtenerValor(NumerosAleatoriosOrigen(indice)) '* -1
@@ -1487,7 +1488,7 @@ Public Class Form_Dibujo
                 ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
             Else
                 ' NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 4) {}
-
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                 For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1) / 2
 
                     NumerosAleatoriosFiltro(indice) = FiltroInstancias.ObtenerValor2(NumerosAleatoriosOrigen(indice)) '* -1
@@ -1526,7 +1527,7 @@ Public Class Form_Dibujo
                 ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
             Else
                 ' NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 4) {}
-
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                 For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1) / 2
 
                     NumerosAleatoriosFiltro(indice) = FiltroInstancias.ObtenerValor3(NumerosAleatoriosOrigen(indice)) '* -1
@@ -1570,7 +1571,7 @@ Public Class Form_Dibujo
                 ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
             Else
                 ' NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 4) {}
-
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                 For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1) / 2
 
                     NumerosAleatoriosFiltro(indice) = KalmanInstancias.getDistance(FiltroInstancias.ObtenerValor(NumerosAleatoriosOrigen(indice)), 2)
@@ -1612,7 +1613,7 @@ Public Class Form_Dibujo
                 ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
             Else
                 ' NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 4) {}
-
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                 For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1) / 2
 
                     NumerosAleatoriosFiltro(indice) = KalmanInstancias.getDistance(FiltroInstancias.ObtenerValor2(NumerosAleatoriosOrigen(indice)), 2)
@@ -1711,7 +1712,7 @@ Public Class Form_Dibujo
                 ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
             Else
                 ' NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 4) {}
-
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                 For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1) / 2
 
                     NumerosAleatoriosFiltro(indice) = Filter(NumerosAleatoriosOrigen(indice))
@@ -1744,7 +1745,7 @@ Public Class Form_Dibujo
                 NumerosAleatoriosFiltro = MovingAverage(NumerosAleatoriosOrigen, 1)
                 ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
             Else
-
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                 'For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1) / 2
 
                 '    NumerosAleatoriosFiltro(indice) = w '
@@ -1840,7 +1841,7 @@ Public Class Form_Dibujo
                 ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
             Else
                 ' NumerosAleatoriosOrigen = New Double((PictureBox1.Width - 1) / 4) {}
-
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                 For indice As Integer = 0 To (NumerosAleatoriosOrigen.Length - 1) / 2
                     Dim w As Double = a0 - a1 * Math.Cos(2 * Math.PI * indice / (NumerosAleatoriosFiltro.Length - 1)) + a2 * Math.Cos(4 * Math.PI * indice / (NumerosAleatoriosFiltro.Length - 1))
                     NumerosAleatoriosFiltro(indice) = w '1 + (a0 * NumerosAleatoriosOrigen(indice) + a1 * NumerosAleatoriosOrigen(indice) + a2 * NumerosAleatoriosOrigen(indice)) 'a0 * NumerosAleatoriosOrigen(indice) + a1 * NumerosAleatoriosOrigen(indice) + a2 * NumerosAleatoriosOrigen(indice)
@@ -1873,7 +1874,7 @@ Public Class Form_Dibujo
                 ' Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
             Else
                 ' NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
-
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                 NumerosAleatoriosFiltro = Blackman(NumerosAleatoriosOrigen)
 
             End If
@@ -1928,7 +1929,7 @@ Public Class Form_Dibujo
                 '    NumerosAleatoriosFiltro(indice) = Softmax(NumerosAleatoriosOrigen) 'a0 * NumerosAleatoriosOrigen(indice) + a1 * NumerosAleatoriosOrigen(indice) + a2 * NumerosAleatoriosOrigen(indice)
 
                 'Next
-
+                NumerosAleatoriosFiltro = New Double((PictureBox1.Width - 1) / 2) {}
                 NumerosAleatoriosFiltro = Softmax(NumerosAleatoriosOrigen, 200)
             End If
             Grafica.ImrimeTimeDomaiSimple(PictureBox1, NumerosAleatoriosOrigen, Color.LimeGreen, NumerosAleatoriosFiltro, Color.Fuchsia)
